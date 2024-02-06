@@ -43,6 +43,7 @@
 ****************************************/
 * {
     box-sizing: border-box;
+    margin: 0px;
 }
 
 body {
@@ -92,8 +93,23 @@ a {
 /***************************************
             ENTÊTE DE PAGE
 ****************************************/
-
-
+nav ul {
+    padding: 0;
+    margin: 0;
+}
+nav ul li{
+    padding: 5px;
+    display: inline-block;
+}
+nav ul li a {
+    color: #2EC4B6;
+}
+nav ul li a{
+}
+header{
+    text-align: center;
+    background-color: #011627;
+}
 
 
 /***************************************
@@ -115,4 +131,16 @@ a {
 ****************************************/
 .page-infos h1 {
     background: deepskyblue;
+}
+.page-infos .image{
+    display: block;
+    margin: 2em auto;
+    height: 200px;
+    width: 200px;
+}
+body{
+    text-align: center;
+}
+footer{
+    text-align: center;
 }
