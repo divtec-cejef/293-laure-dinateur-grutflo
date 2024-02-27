@@ -1,6 +1,6 @@
-/***************************************
+/*************************************
                 FONTS
-****************************************/
+ ************************************/
 /* open-sans-regular - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -27,7 +27,6 @@
     font-weight: 800;
     src: url('../fonts/open-sans-v40-latin-800.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
-
 /* changa-one-regular - latin */
 @font-face {
     font-display: swap; /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
@@ -37,13 +36,11 @@
     src: url('../fonts/changa-one-v20-latin-regular.woff2') format('woff2'); /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
 }
 
-
-/***************************************
-           Règles générales
-****************************************/
+/*************************************
+            Règles Générales
+ ************************************/
 * {
     box-sizing: border-box;
-    margin: 0px;
 }
 
 body {
@@ -53,6 +50,7 @@ body {
     line-height: 1.4;
     color: #011627;
     background-color: #fdfffc;
+    margin: 0;
 }
 
 img {
@@ -90,57 +88,135 @@ a {
     text-decoration: none;
 }
 
-/***************************************
-            ENTÊTE DE PAGE
-****************************************/
-nav ul {
+a:hover {
+    /*border-bottom: 2px solid #e71d36;*/
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+}
+
+/*************************************
+            ENTÊTE DU SITE
+ ************************************/
+header {
+    background-color: #011627;
+    text-align: center;
+    padding: 5px 30px;
+}
+
+header ul {
+    padding: 0;
+}
+
+header ul li {
+    display: inline-block;
+    margin: 0 15px;
+}
+
+header ul li a {
+    padding: 5px 10px;
+    display: inline-block;
+    font-family: "Changa One", sans-serif;
+    font-weight: 400;
+    color: #fdfffc;
+}
+
+header ul li a:hover,
+header ul li a.actif {
+    color: #2ec4b6;
+}
+
+header .personne {
+    font-size: 1.75rem;
+    line-height: 0.8;
+    color: #2ec4b6;
+    font-family: 'Changa One', sans-serif;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+
+header .metier {
+    margin-top: -5px;
+}
+
+/*************************************
+            FOOTER
+ ************************************/
+
+footer {
+    text-align: center;
+    padding: 50px 0 0; /* 50px en haut */
+}
+
+footer nav {
+    margin-bottom: 1rem;
+}
+
+footer ul {
+    list-style: none;
     padding: 0;
     margin: 0;
 }
-nav ul li{
-    padding: 5px;
+
+footer ul li {
     display: inline-block;
 }
-nav ul li a {
-    color: #2EC4B6;
-}
-nav ul li a{
-}
-header{
-    text-align: center;
-    background-color: #011627;
+
+footer ul li img {
+    width: 50px;
+    height: 50px;
+    margin: 0 15px;
+
+    -webkit-filter: grayscale(1);
+    filter: grayscale(1);
+
+    -webkit-transition: -webkit-filter 500ms linear;
+    transition: filter 500ms linear;
 }
 
-
-/***************************************
-              PAGE ACCUEIL
-****************************************/
-.page-accueil h1 {
-    background: red;
+footer ul li img:hover {
+    -webkit-filter: grayscale(0);
+    filter: grayscale(0);
 }
 
-/***************************************
-              PAGE CONTACT
-****************************************/
-.page-contact h1 {
-    background: yellow;
+/*************************************
+            PAGE ACCUEIL
+ ************************************/
+.realisations{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-/***************************************
-           PAGE INFORMATIONS
-****************************************/
-.page-infos h1 {
-    background: deepskyblue;
+.realisations li{
+    flex-basis: 50%;
+    flex-grow: 1;
+    padding: 1rem 2.5%;
 }
-.page-infos .image{
-    display: block;
-    margin: 2em auto;
-    height: 200px;
-    width: 200px;
+
+/* Pour les écrans de 660px on affiche sur 3 colonnes les images */
+@media screen and (min-width: 660px) {
+    .realisations li {
+        flex-basis: 33%;
+        flex-grow: 3;
+    }
 }
-body{
-    text-align: center;
-}
-footer{
-    text-align: center;
-}
+
+    figure {
+        margin: 0;
+    }
+
+    /*************************************
+                PAGE CONTACT
+     ************************************/
+    .page-contact h1 {
+        color: red;
+    }
+
+    /*************************************
+                PAGE INFO
+     ************************************/
+    .page-infos h1 {
+        color: aqua;
+    }
+
